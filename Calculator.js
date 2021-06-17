@@ -24,6 +24,7 @@ reset.addEventListener('click', (Event) => {
     calculation.calculatedvalue = 0;
     calculation.operate_history = [];
     calculation.resulted = false;
+    console.log(calculation);
 }
 });
 
