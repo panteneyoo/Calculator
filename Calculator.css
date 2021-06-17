@@ -9,12 +9,12 @@
   width: 50vh;
 }
 .calculator__display {
-  margin: 2.5vh 3vh;
+  margin: 2.5vh 2vh;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  height: 15vh;
-  font-size: 6vh;
+  height: 10vh;
+  font-size: 4vh;
   color: white;
 }
 .calculator__keys {

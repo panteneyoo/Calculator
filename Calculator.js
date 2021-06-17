@@ -52,10 +52,10 @@ const np = document.getElementById("pos/neg");
 
 np.addEventListener('click', (Event) => {
     if (Event.target.matches('button')){
-        if (display.textContent.length < 14){
+        if (display.textContent.length < 22){
             if (display.textContent[0] === "-"){
                 display.textContent = display.textContent.substring(1);
-            } else if (display.textContent.length < 13){
+            } else if (display.textContent.length < 21){
                 console.log(display.textContent);
                 display.textContent = "-" + display.textContent;
             }
@@ -77,7 +77,7 @@ keys.addEventListener('click', (Event) => {
                 display.textContent = "-" + Event.target.value;
             }
         } else {
-            if (display.textContent.length < 13){
+            if (display.textContent.length < 21){
                     if (Event.target.value !== "."){
                         display.textContent += Event.target.value;   
                     }else if(!display.textContent.includes(".")){
@@ -95,7 +95,7 @@ keys.addEventListener('click', (Event) => {
      const prevalue = calculation.currentvalue;
      if (calculation.calculatedvalue === 0) {
          display.value = " " + String(calculation.calculatedvalue);
-     }else{display.value = String(calculation.calculatedvalue);}
+     }else {display.value = String(calculation.calculatedvalue);}
      display.textContent = display.value;
      calculation.currentvalue = prevalue;
  }
@@ -117,10 +117,10 @@ keys.addEventListener('click', (Event) => {
     }
     const str = String(calculation.calculatedvalue);
     console.log(str);
-    if (str.length > 14 && str.includes("."))
+    if (str.length > 22 && str.includes("."))
     {
-        if (str.indexOf(".") < 12){
-            calculation.calculatedvalue = Number(calculation.calculatedvalue.toFixed(5));
+        if (str.indexOf(".") < 21){
+            calculation.calculatedvalue = Number(calculation.calculatedvalue.toFixed(22-str.indexOf(".")));
         }
     }
  }
