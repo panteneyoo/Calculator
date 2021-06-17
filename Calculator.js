@@ -22,7 +22,6 @@ reset.addEventListener('click', (Event) => {
     if (Event.target.matches('button')) {
     display.textContent = Event.target.value;
     calculation.calculatedvalue = 0;
-    calculation.secondnum = 0;
     calculation.operate_history = [];
     calculation.resulted = false;
 }
@@ -93,7 +92,9 @@ keys.addEventListener('click', (Event) => {
 
  function displayResult(calculation) {
      const prevalue = calculation.currentvalue;
-     display.value = String(calculation.calculatedvalue);
+     if (calculation.calculatedvalue === 0) {
+         display.value = " " + String(calculation.calculatedvalue);
+     }else{display.value = String(calculation.calculatedvalue);}
      display.textContent = display.value;
      calculation.currentvalue = prevalue;
  }
